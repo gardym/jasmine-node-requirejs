@@ -1,10 +1,7 @@
 var requirejs = require('requirejs');
-
-requirejs.config({
-  baseUrl: __dirname + '/../app/javascript/',
-  nodeRequire: require
-});
-
+var configure_requirejs = require('./test_helper').configure_requirejs;
+configure_requirejs(__dirname, requirejs);
+  
 requirejs(['foo'], function(foo) {
   describe("foo", function() {
     describe("bar", function() {
