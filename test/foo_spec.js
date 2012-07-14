@@ -1,4 +1,4 @@
-var requirejs = require('./spec_helper').spec_helper.requirejs;
+var requirejs = require('./requirejs_helper').requirejs;
 
 requirejs(['foo'], function(foo) {
   describe("foo", function() {

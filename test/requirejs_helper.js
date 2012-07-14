@@ -1,4 +1,4 @@
-exports.spec_helper = (function() {
+exports.requirejs = (function() {
   var requirejs = require('requirejs');
 
   requirejs.config({
@@ -6,7 +6,5 @@ exports.spec_helper = (function() {
     nodeRequire: require
   });
 
-  return {
-    requirejs: requirejs
-  }
+  return requirejs;
 })();
