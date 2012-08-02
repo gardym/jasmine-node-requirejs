@@ -1,5 +1,17 @@
 var requirejs = require('./requirejs_helper').requirejs;
 
+var stub_baz = function() {
+  return {
+    qux: function() {
+      return "stubqux";
+    }
+  };
+};
+
+requirejs.config({
+  stub: { 'baz': stub_baz }
+});
+
 requirejs(['foo'], function(foo) {
   describe("foo", function() {
     describe("bar", function() {
@@ -8,8 +20,8 @@ requirejs(['foo'], function(foo) {
       });
     });
     describe("quxbar", function() {
-      it("should return 'quxbar'", function() {
-        expect(foo.quxbar()).toEqual("quxbar");
+      it("should append 'bar' to baz.qux", function() {
+        expect(foo.quxbar()).toEqual("stubquxbar");
       });
     });
   });

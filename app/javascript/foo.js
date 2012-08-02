@@ -1,4 +1,4 @@
-define(["baz"], function(baz) {
+define(["stub!baz"], function(baz) {
   return {
     bar: function() {
       return "bar";
