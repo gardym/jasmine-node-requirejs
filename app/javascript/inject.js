@@ -1,7 +1,7 @@
 define({
   load: function(name, req, load, config) {
-    if(config.stub && config.stub[name]) {
-      load(config.stub[name]());
+    if(config.inject && config.inject[name]) {
+      load(config.inject[name]());
     } else {
       req([name], function(original) {
         load(original);

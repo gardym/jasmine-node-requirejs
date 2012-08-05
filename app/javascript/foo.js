@@ -1,4 +1,4 @@
-define(["stub!baz"], function(baz) {
+define(["inject!baz"], function(baz) {
   return {
     bar: function() {
       return "bar";

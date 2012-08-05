@@ -9,7 +9,7 @@ var stub_baz = function() {
 };
 
 requirejs.config({
-  stub: { 'baz': stub_baz }
+  inject: { 'baz': stub_baz }
 });
 
 requirejs(['foo'], function(foo) {
